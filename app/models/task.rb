@@ -3,4 +3,8 @@ class Task < ActiveRecord::Base
 
   validates :title, presence: true
   validates :body, presence: true
+
+  def completed
+    self.complete = true
+  end
 end
