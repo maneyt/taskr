@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def index
-    @tasks = current_user.tasks.not_completed
+    @tasks = current_user.tasks.not_completed.order("created_at DESC")
     @task = Task.new
   end
 
@@ -9,9 +9,7 @@ class TasksController < ApplicationController
      @tasks = current_user.tasks
 
      if @task.save
-       redirect_to :tasks
-     else
-       render :index
+       render @task
      end
   end
 
