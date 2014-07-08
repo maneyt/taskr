@@ -4,7 +4,7 @@ class Task < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
 
-  def completed
-    self.complete = true
+  def self.not_completed
+    where(complete: false)
   end
 end

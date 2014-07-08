@@ -1,10 +1,6 @@
-<% if !task.complete %>
-  <li>
-    <p><%= task.title %></p>
-    <p> &ndash; <%= task.body %></p>
-    <%= button_to "Done with this task", task , method: :patch %>
-    <%= button_to "delete this task", task, method: :delete %>
-  </li>
-<% end %>
-
-
+<li>
+  <p><%= task.title %></p>
+  <p> &ndash; <%= task.body %></p>
+  <%= button_to "Done with this task", task , method: :patch %>
+  <%= button_to "delete this task", task, method: :delete %>
+</li>
